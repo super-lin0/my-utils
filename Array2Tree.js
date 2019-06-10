@@ -1,4 +1,4 @@
-const treeTransform1 = (
+export const treeTransform1 = (
   data = [],
   key = "id",
   parentKey = "parendId",
@@ -35,7 +35,7 @@ const treeTransform1 = (
   return parents;
 };
 
-const treeDataTransform = (
+export const treeDataTransform = (
   data = [],
   key = "id",
   parentKey = "parentId",
@@ -81,62 +81,66 @@ const treeDataTransform = (
   return arr;
 };
 
-const data = [
-  {
-    id: 0,
-    parentId: -1,
-    name: "菜单根"
-  },
-  {
-    id: 1,
-    parentId: 0,
-    name: "test1"
-  },
-  {
-    id: 2,
-    parentId: 0,
-    name: "test2"
-  },
-  {
-    id: 5,
-    parentId: 0,
-    name: "test3"
-  },
-  {
-    id: 6,
-    parentId: 0,
-    name: "test4"
-  },
-  {
-    id: 7,
-    parentId: 0,
-    name: "test5"
-  },
-  {
-    id: 3,
-    parentId: 2,
-    name: "test6"
-  },
-  {
-    id: 4,
-    parentId: 2,
-    name: "test7"
-  },
-  {
-    id: 10,
-    parentId: 2,
-    name: "test8"
-  },
-  {
-    id: 8,
-    parentId: 7,
-    name: "test9"
-  },
-  {
-    id: 9,
-    parentId: 8,
-    name: "test10"
-  }
-];
+export const SayHi = () => {
+  console.log("Hello ,I'm from npm package");
+};
 
-const arr = treeDataTransform(data);
+// const data = [
+//   {
+//     id: 0,
+//     parentId: -1,
+//     name: "菜单根"
+//   },
+//   {
+//     id: 1,
+//     parentId: 0,
+//     name: "test1"
+//   },
+//   {
+//     id: 2,
+//     parentId: 0,
+//     name: "test2"
+//   },
+//   {
+//     id: 5,
+//     parentId: 0,
+//     name: "test3"
+//   },
+//   {
+//     id: 6,
+//     parentId: 0,
+//     name: "test4"
+//   },
+//   {
+//     id: 7,
+//     parentId: 0,
+//     name: "test5"
+//   },
+//   {
+//     id: 3,
+//     parentId: 2,
+//     name: "test6"
+//   },
+//   {
+//     id: 4,
+//     parentId: 2,
+//     name: "test7"
+//   },
+//   {
+//     id: 10,
+//     parentId: 2,
+//     name: "test8"
+//   },
+//   {
+//     id: 8,
+//     parentId: 7,
+//     name: "test9"
+//   },
+//   {
+//     id: 9,
+//     parentId: 8,
+//     name: "test10"
+//   }
+// ];
+
+// const arr = treeDataTransform(data);
