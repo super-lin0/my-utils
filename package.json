@@ -1,6 +1,6 @@
 {
-  "name": "wulin-utils",
-  "version": "0.0.4",
+  "name": "wl-utils",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": "https://github.com/super-lin0/my-utils.git",
   "author": "super-lin0 <3924578651@qq.com>",
