@@ -43,6 +43,37 @@ export function translator(routers, prefix = "", routeMap = {}) {
   return routeMap;
 }
 
+/**
+ * Vue-router中嵌套路由的实现
+ * @param {*} routers
+ */
+export function createRouteMap(routers) {
+  routers.forEach(route => {
+    addRouteRecord(route);
+  });
+}
+
+const addRouteRecord = (pathMap = {}, route, parent) => {
+  const { path } = route;
+  const normalizedPath = normalizePath(path, parent);
+
+  if (route.children) {
+    route.children.forEach(child => {
+      addRouteRecord(pathMap, child, { ...route, path: normalizedPath });
+    });
+  }
+
+  if (!pathMap[normalizedPath]) {
+    pathMap[normalizedPath] = route;
+  }
+};
+
+const normalizePath = (path, parent) => {
+  if (path[0] === "/") return path;
+  if (parent == null) return path;
+  return `${parent.path}/${path}`.replace(/\/\//g, "/");
+};
+
 export function getPlainNode(nodeList, parentPath = "") {
   const arr = [];
   nodeList.forEach(node => {
